@@ -1,5 +1,6 @@
 import Searchbar from './Searchbar/Searchbar';
 import Navigation from './Navigation/Navigation';
+import BackButton from './BackButton/BackButton';
 
 export const App = () => {
   return (
@@ -16,6 +17,7 @@ export const App = () => {
       >
         <Searchbar />
         <Navigation />
+        <BackButton />
       </div>
     </>
   );
