@@ -1,6 +1,11 @@
+import { lazy, Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
 import Searchbar from './Searchbar/Searchbar';
 import Navigation from './Navigation/Navigation';
 import BackButton from './BackButton/BackButton';
+
+const HomePage = lazy(() => import('../pages/Homepage/Homepage'));
 
 export const App = () => {
   return (
@@ -18,6 +23,9 @@ export const App = () => {
         <Searchbar />
         <Navigation />
         <BackButton />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
       </div>
     </>
   );
