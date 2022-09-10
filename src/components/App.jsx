@@ -6,6 +6,9 @@ import Navigation from './Navigation/Navigation';
 import BackButton from './BackButton/BackButton';
 
 const HomePage = lazy(() => import('../pages/Homepage/Homepage'));
+const MovieDetailsPage = lazy(() =>
+  import('../pages/MovieDetailsPage/MovieDetailsPage')
+);
 
 export const App = () => {
   return (
@@ -25,6 +28,7 @@ export const App = () => {
         <BackButton />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/movies/:movieId" element={<MovieDetailsPage />}></Route>
         </Routes>
       </div>
     </>
