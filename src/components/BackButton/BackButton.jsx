@@ -1,18 +1,16 @@
-import { Link } from 'react-router-dom';
-import styles from './Button.module.css';
+import { Link, useLocation } from 'react-router-dom';
 
-const BackButton = () => {
-  //   const { state } = useLocation();
-  //   console.log(state);
+import style from './Button.module.css';
+
+export default function BackButton() {
+  const { state } = useLocation();
   return (
-    //  state?.from && (
-    //  <Link to={state.from}>
-    <button type="button" className={styles.button}>
-      Back
-    </button>
-    //  </Link>
-    //  )
+    state?.from && (
+      <Link to={state.from}>
+        <button type="button" className={style.button}>
+          <span>Back</span>
+        </button>
+      </Link>
+    )
   );
-};
-
-export default BackButton;
+}

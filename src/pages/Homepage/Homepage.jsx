@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import { Container } from 'components/Container/Container';
 import MovieGallery from 'components/MovieGallery/MovieGallery';
 import { fetchMovies } from '../../services/fetchMovies';
+import Loader from 'components/Loader/Loader';
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -30,14 +32,13 @@ const HomePage = () => {
 
   return (
     <>
-      {isLoading && <div>Loading...</div>}
+      {isLoading && <Loader />}
       {error && toast.error(`Whoops, something went wrong: ${error.message}`)}
-      <div>
-        <h1>Trending</h1>
+      <Container>
         {error && toast.error(`Whoops, something went wrong: ${error.message}`)}
         <MovieGallery movies={movies} prevLocation={location} />
         <ToastContainer autoClose={3000} />
-      </div>
+      </Container>
     </>
   );
 };

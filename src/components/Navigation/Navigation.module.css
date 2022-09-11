@@ -1,32 +1,29 @@
 .link {
-  text-decoration: none;
-  color: #000000;
-  font-size: 24px;
-  font-weight: 400;
-  padding: 0 10px 5px 10px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 24px;
+    font-weight: 400;
+    padding: 0 10px 5px 10px;
 }
 
 .active {
-  text-decoration: none;
-  color: #3f51b5;
-  font-size: 24px;
-  font-weight: 400;
-  padding: 0 10px 5px 10px;
+    composes: link;
+    color: #3fa6fa;
 }
 
-.navigation {
-  list-style-type: none;
-  height: 50px;
-  outline: none;
-  border-bottom: solid #3f51b5;
-  box-shadow: 0 4px 6px -2px #3f51b5;
+.navigation {    
+    list-style-type: none;
+    height: 50px;
+    outline: none;
+    border-bottom: solid #3fa6fa;
+    box-shadow: 0 4px 6px -2px #3fa6fa;
 }
 
 .navigation li {
-  float: left;
-  text-decoration: none;
+    float: left;
+    text-decoration: none;
 }
 
 .navigation li a:hover {
-  box-shadow: 0 3px 2px -2px #3f51b5;
+    box-shadow: 0 3px 2px -2px #3fa6fa;
 }

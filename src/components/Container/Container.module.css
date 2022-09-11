@@ -1,0 +1,8 @@
+.container {
+    width: fit-content;
+    padding: 10px;
+    /* margin: 0 auto; */
+    margin-bottom: 15px;
+    background-color: rgba(0, 0, 0, 0.02);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}

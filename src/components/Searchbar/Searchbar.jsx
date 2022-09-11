@@ -12,19 +12,18 @@ const Searchbar = ({ onSearch }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    const clearSearchRequest = () => setSearchRequest('');
     if (searchRequest.trim() === '') {
       return toast.warning('Search field is empty!');
     }
     onSearch(searchRequest);
-    clearSearchRequest();
+    setSearchRequest('');
   };
 
   return (
-    <header className={style.Searchbar}>
-      <form className={style.SearchForm} onSubmit={handleSubmit}>
+    <header>
+      <form onSubmit={handleSubmit}>
         <button type="submit" className={style.SearchForm_button}>
-          <span className={style.SearchForm_button_label}>Search</span>
+          Search
         </button>
 
         <input
@@ -35,7 +34,7 @@ const Searchbar = ({ onSearch }) => {
           onChange={handleRequestChange}
           autoComplete="off"
           autoFocus
-          placeholder="Search movies"
+          placeholder="Enter your search request"
         />
       </form>
     </header>

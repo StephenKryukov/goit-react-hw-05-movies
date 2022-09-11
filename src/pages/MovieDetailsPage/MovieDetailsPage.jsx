@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useParams, Outlet } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
+import { Container } from 'components/Container/Container';
+import Loader from 'components/Loader/Loader';
 import BackButton from 'components/BackButton/BackButton';
 import MovieCard from 'components/MovieCard/MovieCard';
 
@@ -48,9 +50,9 @@ export default function MovieDetailsPage() {
     <>
       {error && toast.error(`Whoops, something went wrong: ${error.message}`)}
       <>
-        {isLoading && <div>Loading...</div>}
+        {isLoading && <Loader color={'#3f51b5'} size={32} />}
         <BackButton />
-        <div>{movie && <MovieCard movie={movie} />}</div>
+        <Container>{movie && <MovieCard movie={movie} />}</Container>
         <Outlet />
       </>
     </>
