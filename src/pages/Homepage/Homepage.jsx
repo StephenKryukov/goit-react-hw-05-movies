@@ -10,7 +10,6 @@ const HomePage = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-
   const location = useLocation();
 
   useEffect(() => {
